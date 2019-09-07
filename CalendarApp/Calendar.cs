@@ -29,40 +29,40 @@ namespace CalendarApp
             
             //for each fo the 6 row, we will build the string representing the row base on the currentDate.
             int indexOfDay = 1;
-            int numberOfDay = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
-            DateTime firstDay = new DateTime(currentDate.Year, currentDate.Month, 1);
-            for (int i = 0; i < 6; i++)
+            int numberOfDay = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);// get the number of day in the current month
+            DateTime firstDay = new DateTime(currentDate.Year, currentDate.Month, 1);// get the first day indexes (1-7) in the current month
+            for (int i = 0; i < 6; i++)//we display 6 line
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < 7; j++)// with the 7 day case in each
                 {
-                    if (indexOfDay != numberOfDay + 1)
+                    if (indexOfDay != numberOfDay + 1)//if we haven''t reach the last day
                     {
-                        if (i == 0 && j+1 < firstDay.Day)
+                        if (i == 0 && j+1 < firstDay.Day)//if we haven't reach teh first day add a blank case'
                         {
                             calendarStr += "|    ";
                         }
-                        else if (indexOfDay < 10)
+                        else if (indexOfDay < 10)// else , if the number is lower then 10 we add a 0 before the number in the case
                         {
                             calendarStr += "| 0" + indexOfDay + " ";
                             indexOfDay++;
                         }
-                        else
+                        else // else we simply display the number in the cas
                         {
                             calendarStr += "| " + indexOfDay + " ";
                             indexOfDay++;
                         }
                     }
-                    else
+                    else// if we have reached the last day we fill the remaining case with blank
                     {
                         calendarStr += "|    ";
                     }
                 }
 
-                calendarStr += "|\n";
+                calendarStr += "|\n";//add the end line to each row
             }
 
-            calendarStr += "====================================\n";
-            return getMonth(currentDate.Month) + " " + currentDate.Year + "\n" +  calendarStr;
+            calendarStr += "====================================\n";// add the last row to the calendar
+            return getMonth(currentDate.Month) + " " + currentDate.Year + "\n" +  calendarStr;//return the month and year followed by the calendar
         }
 
         //Author : Alexandre Brière
