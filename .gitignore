@@ -1,1 +1,5 @@
 .idea/*
+CalendarApp/obj/*
+CalendarApp/bin/*
+CalendarApp.sln
+CalendarApp/CalendarApp.csproj
