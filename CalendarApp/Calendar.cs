@@ -10,6 +10,7 @@ namespace CalendarApp
         public Calendar()
         {
             currentDate = System.DateTime.Now;
+            
         }
 
         
@@ -34,9 +35,9 @@ namespace CalendarApp
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    if (indexOfDay != numberOfDay)
+                    if (indexOfDay != numberOfDay + 1)
                     {
-                        if (i == 0 && j < firstDay.Day)
+                        if (i == 0 && j+1 < firstDay.Day)
                         {
                             calendarStr += "|    ";
                         }
