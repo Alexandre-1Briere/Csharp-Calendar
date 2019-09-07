@@ -41,7 +41,7 @@ namespace CalendarApp
                         {
                             calendarStr += "|    ";
                         }
-                        else if (indexOfDay < 9)
+                        else if (indexOfDay < 10)
                         {
                             calendarStr += "| 0" + indexOfDay + " ";
                             indexOfDay++;
@@ -60,7 +60,18 @@ namespace CalendarApp
 
                 calendarStr += "|\n";
             }
-            return calendarStr;
+
+            calendarStr += "====================================\n";
+            return "\n" +  calendarStr;
+        }
+
+        //Author : Alexandre Brière
+        //Input : the number corresponding to the current month (1-12)
+        //Output : the string that correspond to the current month
+        //Description: allow to display the current month in word
+        private string getMonth(int month)
+        {
+            
         }
     }
 }
